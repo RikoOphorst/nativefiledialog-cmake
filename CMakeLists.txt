@@ -24,4 +24,9 @@ endif ()
 
 add_library(nativefiledialog ${SOURCES})
 
-target_include_directories(nativefiledialog PUBLIC src/include)
+target_include_directories(nativefiledialog PUBLIC 
+						$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/src/include>
+						"$<INSTALL_INTERFACE:${CMAKE_INSTALL_INCLUDEDIR}>")
+#--- install						
+install(TARGETS nativefiledialog EXPORT Engine DESTINATION "${CMAKE_INSTALL_LIBDIR}")
+install(FILES ${SOURCES} DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}) 
