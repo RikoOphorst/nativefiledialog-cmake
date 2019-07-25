@@ -28,6 +28,6 @@ target_include_directories(nativefiledialog PUBLIC
 						$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/src/include>
 						"$<INSTALL_INTERFACE:${CMAKE_INSTALL_INCLUDEDIR}>")
 #--- install						
-install(TARGETS nativefiledialog EXPORT AIngineEditor DESTINATION "${CMAKE_INSTALL_LIBDIR}")
-install(TARGETS nativefiledialog EXPORT AIngine DESTINATION "${CMAKE_INSTALL_LIBDIR}")
+install(TARGETS nativefiledialog EXPORT AIngineEditor DESTINATION "${CMAKE_INSTALL_LIBDIR}" COMPONENT editor)
+install(TARGETS nativefiledialog EXPORT AIngine DESTINATION "${CMAKE_INSTALL_LIBDIR}" COMPONENT aingine)
 install(FILES ${SOURCES} DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}) 
